@@ -23,6 +23,9 @@ namespace PirmaUzduotis
         /// Atsakymų sąrašas
         /// </summary>
         private List<Answer> answers;
+        /// <summary>
+        /// Paklaida
+        /// </summary>
         public double allowance { set; get; }
         public double definedMax { set; get; }
 
