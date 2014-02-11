@@ -19,7 +19,9 @@ namespace PirmaUzduotis
                     new Answer() { Id = 0, xn = 0.0, xn1 = 0.0}
                 };
         }
-
+        /// <summary>
+        /// Atsakymų sąrašas
+        /// </summary>
         private List<Answer> answers;
         public double allowance { set; get; }
         public double definedMax { set; get; }
