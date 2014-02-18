@@ -86,7 +86,7 @@ namespace PirmaUzduotis
             sb.AppendLine("paklaida " + paklaida);
 
             // create a writer and open the file
-            TextWriter tw = new StreamWriter("date.txt");
+            TextWriter tw = new StreamWriter("iteraciju-atsakymas.txt");
 
             // write a line of text to the file
             tw.WriteLine(sb.ToString());
