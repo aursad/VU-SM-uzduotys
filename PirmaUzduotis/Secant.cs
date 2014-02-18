@@ -11,46 +11,80 @@ namespace PirmaUzduotis
 {
     class Secant : ISecant
     {
+        /// <summary>
+        /// First initial approach
+        /// </summary>
         private double x0;
+        /// <summary>
+        /// Second initial approach
+        /// </summary>
         private double x1;
-       public double allowance { set; get; }
+        /// <summary>
+        /// Allowance for counting
+        /// </summary>
+        public double allowance { set; get; }
 
-      public Secant(double x0, double x1, double allowance)
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="x0">First initial approach</param>
+        /// <param name="x1">Second initial approach</param>
+        /// <param name="allowance">Allowance</param>
+        public Secant(double x0, double x1, double allowance)
         {
             this.allowance = allowance;
             this.x0 = x0;
             this.x1 = x1;
         }
-
+        /// <summary>
+        /// Main function
+        /// </summary>
+        /// <param name="x"></param>
+        /// <returns>Function answer</returns>
         public double f(double x)
         {
             //double result = x*x*x - x - 3;
             double result = 3 * Math.Exp(-3 * x);
             return result;
         }
+        /// <summary>
+        /// New approach
+        /// </summary>
+        /// <param name="i">Iteration number</param>
         public void newSecant(int i)
         {
-            double x2 = x1-((f(x1)*(x1-x0))/(f(x1)-f(x0)));
+            double x2 = x1 - ((f(x1) * (x1 - x0)) / (f(x1) - f(x0)));
             x0 = x1;
             x1 = x2;
         }
-
+        /// <summary>
+        /// Checking the accuracy
+        /// </summary>
+        /// <returns>boolean is accuracy</returns>
         public bool Equalation()
         {
             double left = Math.Abs(x1 - x0);
-            
-            if(left < allowance)
+
+            if (left < allowance)
             {
                 return true;
-            } else
+            }
+            else
             {
                 return false;
             }
         }
+        /// <summary>
+        /// Return answer
+        /// </summary>
+        /// <returns>Answer</returns>
         private double answer()
         {
             return x1;
         }
+        /// <summary>
+        /// Print information to file
+        /// </summary>
         public void Print()
         {
             StringBuilder sb = new StringBuilder();
