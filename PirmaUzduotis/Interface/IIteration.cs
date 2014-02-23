@@ -20,7 +20,7 @@ namespace PirmaUzduotis.Interface
         /// <summary>
         /// Generuojama funkcija sprendimui
         /// </summary>
-        void Function(double x);
+        void Function();
 
     }
 }

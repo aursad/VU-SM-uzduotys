@@ -10,80 +10,56 @@ namespace PirmaUzduotis
 {
     class Iteration : IIteration
     {
+        private double xn = 0.0;
+        private double xn1 = 0.0;
+
         public Iteration(double allowance, double defineMax)
         {
             this.allowance = allowance;
             this.definedMax = defineMax;
-            this.answers = new List<Answer>()
-                {
-                    new Answer() { Id = 0, xn = 0.0, xn1 = 0.0}
-                };
         }
-        /// <summary>
-        /// Atsakymų sąrašas
-        /// </summary>
-        private List<Answer> answers;
         /// <summary>
         /// Paklaida
         /// </summary>
         public double allowance { set; get; }
         public double definedMax { set; get; }
 
-        public void Function(double x)
+        public void Function()
         {
-            double result;
-            result = 0.2*Math.Atan(x+1);
-
-            double resultBefore = Math.Abs(result - answers.Last().xn);
-
-            answers.Add(new Answer() { Id = answers.Count(), xn = result, xn1 = resultBefore });
+            double result = 3 * Math.Exp(-3 * this.xn);
+            //double result = 0.2 * Math.Atan(this.xn + 1);
+            this.xn1 = result;
         }
 
         public bool Equalation()
         {
             double right = ((1 - this.definedMax) / this.definedMax) * this.allowance;
-            double left = answers.Last().xn1;
+            double left = Math.Abs(this.xn1 - this.xn);
 
-            if (answers.Count() == 1) { return false; }
             if (left <= right)
             {
                 return true;
             }
             else
             {
+                this.xn = this.xn1;
+                this.xn1 = 0.0;
                 return false;
             }
-        }
-        public List<Answer> List()
-        {
-            return answers;
-        }
-        public double getLastXn1()
-        {
-            return answers.Last().xn1;
-        }
-        public double getLastXn()
-        {
-            return answers.Last().xn;
         }
         public void Print()
         {
             StringBuilder sb = new StringBuilder();
-            double result = this.getLastXn() - this.getLastXn1();
-            double paklaida = result - this.getLastXn();
+            double paklaida = Math.Abs(this.xn1 - this.xn);
+            double result = this.xn1 + paklaida;
 
 
-            sb.AppendLine("Paklaida: " + this.allowance.ToString());
-            sb.AppendLine("Apibrėžta: " + this.definedMax.ToString());
+            sb.AppendLine(String.Format("Paklaida : {0}", this.allowance));
+            sb.AppendLine(String.Format("Apibrėžta: {0}", this.definedMax));
             sb.AppendLine();
-            sb.AppendLine("Iter.i |       xi               |       |xi - x(i-1)    |");
-            foreach (Answer answer in answers)
-            {
-                sb.AppendLine(answer.Id + " | " + answer.xn + " | " + answer.xn1);
-            }
             sb.AppendLine();
-            sb.AppendLine("Tikslusis sprendinys: " + result);
-            sb.AppendLine("paklaida " + paklaida);
+            sb.AppendLine(String.Format("Tikslusis sprendinys: {0}", result));
+            sb.AppendLine(String.Format("paklaida {0}", paklaida));
 
             // create a writer and open the file
             TextWriter tw = new StreamWriter("iteraciju-atsakymas.txt");
