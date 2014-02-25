@@ -1,17 +1,13 @@
-﻿using System;
+﻿using AntraUzduotis.Interface;
+using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace AntraUzduotis
 {
-    class Program
+    class MoveMethod : IMoveMethod
     {
-        static void Main(string[] args)
-        {
-
-        }
     }
 }
