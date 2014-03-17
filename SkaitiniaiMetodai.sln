@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PirmaUzduotis", "PirmaUzduo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AntraUzduotis", "AntraUzduotis\AntraUzduotis.csproj", "{36721228-1E71-4421-9961-B695BA4698F9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testai", "AntraTests\Testai.csproj", "{A977FC3C-830D-4152-8D3A-6D57208C34C0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{36721228-1E71-4421-9961-B695BA4698F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36721228-1E71-4421-9961-B695BA4698F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36721228-1E71-4421-9961-B695BA4698F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A977FC3C-830D-4152-8D3A-6D57208C34C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A977FC3C-830D-4152-8D3A-6D57208C34C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A977FC3C-830D-4152-8D3A-6D57208C34C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A977FC3C-830D-4152-8D3A-6D57208C34C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -6,8 +6,17 @@ using System.Threading.Tasks;
 
 namespace AntraUzduotis.Model
 {
-    class Matrix
+    public class Matrix
     {
+        public int n;
+        public List<Line> line = new List<Line>();
+    }
 
+    public class Line
+    {
+        public int id;
+        public List<double> values;
+        public double c;
+        public double d;
     }
 }

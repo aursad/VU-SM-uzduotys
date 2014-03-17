@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace AntraUzduotis.Interface
 {
-    class IMoveMethod
+    interface IMoveMethod
     {
+        void ReadFromFile(string fileName);
     }
 }

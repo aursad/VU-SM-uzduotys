@@ -11,7 +11,9 @@ namespace AntraUzduotis
     {
         static void Main(string[] args)
         {
-
+            MoveMethod mm = new MoveMethod();
+            mm.ReadFromFile("test1.txt");
+            Console.ReadKey();
         }
     }
 }
