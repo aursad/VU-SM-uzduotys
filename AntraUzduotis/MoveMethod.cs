@@ -65,6 +65,13 @@ namespace AntraUzduotis
             for (int i = 1; i <= n-1; i++)
             {
                 Line line = this.matrix.line[i];
+                if(i >= 2 && i <= n-2)
+                {
+                    if(Math.Abs(line.values[now]) >= (Math.Abs(line.values[before]) + Math.Abs(line.values[now+1])))
+                    {
+                        throw new System.ArgumentException("Error with matrix line!");
+                    }
+                }
                 if (i != n-1)
                 {
                     this.matrix.line[i].c = (line.values[now] * -1) / (line.values[now] * this.matrix.line[i - 1].c + line.values[before]);
@@ -101,7 +108,10 @@ namespace AntraUzduotis
             }
             sb.AppendLine();
             // create a writer and open the file
-            TextWriter tw = new StreamWriter("moveMethod.txt");
+            string fileName = String.Format("moveMethod_{0}.txt", DateTime.Now.Ticks);
+            string fullPath = Path.GetFullPath(fileName);
+
+            TextWriter tw = new StreamWriter(fullPath);
 
             // write a line of text to the file
             tw.WriteLine(sb.ToString());

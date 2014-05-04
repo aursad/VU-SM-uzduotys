@@ -45,5 +45,31 @@ namespace AntraTests
             mm.Reverse();
             mm.Print();
         }
+        [TestMethod]
+        public void TestMoveMethod2()
+        {
+            MoveMethod mm = new MoveMethod();
+            mm.ReadFromFile("test2.txt");
+            mm.Start();
+            mm.Reverse();
+            mm.Print();
+        }
+        //[TestMethod]
+        public void TestMoveMethod3()
+        {
+            MoveMethod mm = new MoveMethod();
+            mm.ReadFromFile("test3.txt");
+            mm.Start();
+            mm.Reverse();
+            mm.Print();
+        }
+        [TestMethod]
+        public void test_spline()
+        {
+            SPline spline = new SPline(-2, 1);
+            Assert.AreEqual(0.3, spline.Interval);
+            spline.Dojob();
+            Assert.AreEqual(-4, spline.Answers[0]);
+        }
     }
 }
