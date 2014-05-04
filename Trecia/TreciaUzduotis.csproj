@@ -7,8 +7,8 @@
     <ProjectGuid>{50945FC2-A984-486F-958C-E9FE3D2F625F}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Trecia</RootNamespace>
-    <AssemblyName>Trecia</AssemblyName>
+    <RootNamespace>TreciaUzduotis</RootNamespace>
+    <AssemblyName>TreciaUzduotis</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,8 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InverseIteration\Inverse.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Seidel\Seidel.cs" />
+    <Compile Include="SimpleIterations.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
