@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TreciaUzduotis;
 using System.Collections.Generic;
+using TreciaUzduotis.aim;
 
 namespace AntraTests
 {
@@ -79,6 +80,27 @@ namespace AntraTests
             dnm didziausioNuolydzio = new dnm(A, f, x, 0.0001);
             double[,] test = didziausioNuolydzio.Mult(A, f);
 
+        }
+        [TestMethod]
+        public void AIM()
+        {
+            double[,] A = new double[,] { 
+            { 47.702, 47.6, 47, 47 }, 
+            { 47.6, 47.702, 47.6, 47 }, 
+            { 47, 47.6, 47.702, 47.6 }, 
+            { 47, 47, 47.6, 47.702 } 
+            };
+            double[,] xo = new double[4, 1] {
+                {1}, {0}, {0}, {0}
+            };
+            double[,] e = new double[,] {
+                {1,0,0,0},
+                {0,1,0,0},
+                {0,0,1,0},
+                {0,0,0,1}
+            };
+            aim AtvIter = new aim(A, xo, 20, 0.0001, e);
+            AtvIter.Program();
         }
     }
 }
